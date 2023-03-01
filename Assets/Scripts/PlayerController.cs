@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using TMPro;
 
@@ -9,11 +10,15 @@ public class PlayerController : MonoBehaviour
     public float speed = 0;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
+    public GameObject loseTextObject;
 
     private Rigidbody rb; // isso vai criar uma variável rigidbody para aplicar forças (private, não acessível ao inspector)
     private float movementX;
     private float movementY;
     private int count;
+    private bool stop_timer;
+    public float timeRemaining = 10;
+    public TextMeshProUGUI timeText;
 
 
     // Start is called before the first frame update
@@ -22,11 +27,13 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         // Setando o count pra 0 aqui, pois ele é private
         count = 0;
+        stop_timer = false;
 
         SetCountText();
 
         // Set the text property of the Win Text UI to an empty string, making the 'You Win' (game over message) blank
         winTextObject.SetActive(false);
+        loseTextObject.SetActive(false);
 
     }
 
@@ -47,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("PickUp"))
+        if (other.gameObject.CompareTag("PickUp") && !stop_timer)
         {
             // Apenas desativa o Gameobject, mas não o destroi. Só que pra desativar tem que escolher qual, porque
             // a bolinha é um rigidbody que vai ter interação e colisao com tudo : ground, walls, por isso a tag.
@@ -71,7 +78,32 @@ public class PlayerController : MonoBehaviour
         if (count >= 12)
         {
             // Set the text value of your 'winText'
+            stop_timer = true;
             winTextObject.SetActive(true);
         }
+    }
+
+    void Update() 
+    {
+        if (timeRemaining > 0 && !stop_timer)
+        {
+            timeRemaining -= Time.deltaTime;
+            ShowTime(timeRemaining);
+        }
+        else if (timeRemaining <= 0 && !stop_timer) 
+        {
+            stop_timer = true;
+            loseTextObject.SetActive(true);
+            
+        }
+    }
+
+    void ShowTime(float time)
+    {
+        time += 1;
+        float minutes = Mathf.FloorToInt(time / 60);
+        float seconds = Mathf.FloorToInt(time % 60);
+        timeText.text = string.Format("Tempo restante : {0:00}:{1:00}", minutes, seconds);
+
     }
 }
