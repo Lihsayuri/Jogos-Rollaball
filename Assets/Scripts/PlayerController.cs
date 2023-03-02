@@ -12,20 +12,26 @@ public class PlayerController : MonoBehaviour
     public GameObject winTextObject;
     public GameObject loseTextObject;
 
-    private Rigidbody rb; // isso vai criar uma variável rigidbody para aplicar forças (private, não acessível ao inspector)
+    private Rigidbody rb; // isso vai criar uma variï¿½vel rigidbody para aplicar forï¿½as (private, nï¿½o acessï¿½vel ao inspector)
     private float movementX;
     private float movementY;
     private int count;
     private bool stop_timer;
     public float timeRemaining = 10;
-    public TextMeshProUGUI timeText;
+    public TextMeshProUGUI timeText; 
+    public int vida = 5;
 
+    [SerializeField]
+    private Sprite [] _livesSprites;
+
+    [SerializeField]
+    private Image _livesImage;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        // Setando o count pra 0 aqui, pois ele é private
+        // Setando o count pra 0 aqui, pois ele ï¿½ private
         count = 0;
         stop_timer = false;
 
@@ -56,10 +62,10 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PickUp") && !stop_timer)
         {
-            // Apenas desativa o Gameobject, mas não o destroi. Só que pra desativar tem que escolher qual, porque
-            // a bolinha é um rigidbody que vai ter interação e colisao com tudo : ground, walls, por isso a tag.
-            // by the way, precisa transformar em trigger e não continuar em normal colliders.
-            // Ainda colocar kinematic - standar rigid bodies movem por forças fisica. 
+            // Apenas desativa o Gameobject, mas nï¿½o o destroi. Sï¿½ que pra desativar tem que escolher qual, porque
+            // a bolinha ï¿½ um rigidbody que vai ter interaï¿½ï¿½o e colisao com tudo : ground, walls, por isso a tag.
+            // by the way, precisa transformar em trigger e nï¿½o continuar em normal colliders.
+            // Ainda colocar kinematic - standar rigid bodies movem por forï¿½as fisica. 
             // Os kinematic movem por transform.
             other.gameObject.SetActive(false);
 
@@ -68,6 +74,16 @@ public class PlayerController : MonoBehaviour
 
             // Run the 'SetCountText()' function (see below)
             SetCountText();
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision) 
+    {
+        if (collision.gameObject.tag == "WallDamage" && !stop_timer)
+        {
+            vida = vida - 1;
+            _livesImage.sprite = _livesSprites[vida];
+            Debug.Log("Vida restante: " + vida);
         }
     }
 
@@ -95,6 +111,11 @@ public class PlayerController : MonoBehaviour
             stop_timer = true;
             loseTextObject.SetActive(true);
             
+        } 
+        if (vida <= 0 && !stop_timer) 
+        {
+            stop_timer = true;
+            loseTextObject.SetActive(true);
         }
     }
 
@@ -103,7 +124,7 @@ public class PlayerController : MonoBehaviour
         time += 1;
         float minutes = Mathf.FloorToInt(time / 60);
         float seconds = Mathf.FloorToInt(time % 60);
-        timeText.text = string.Format("Tempo restante : {0:00}:{1:00}", minutes, seconds);
+        timeText.text = string.Format("Time remaining : {0:00}:{1:00}", minutes, seconds);
 
     }
 }

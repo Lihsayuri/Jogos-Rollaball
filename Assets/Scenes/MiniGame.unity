@@ -136,8 +136,8 @@ GameObject:
   - component: {fileID: 143712368}
   - component: {fileID: 143712367}
   m_Layer: 0
-  m_Name: wall6
-  m_TagString: Untagged
+  m_Name: wall7
+  m_TagString: WallDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,7 +190,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7c66d047fbd8ab44dadde80e27943eba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -503,8 +503,8 @@ GameObject:
   - component: {fileID: 552924744}
   - component: {fileID: 552924743}
   m_Layer: 0
-  m_Name: wall10
-  m_TagString: Untagged
+  m_Name: wall12
+  m_TagString: WallDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -518,7 +518,7 @@ Transform:
   m_GameObject: {fileID: 552924741}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -7.45, y: 0, z: -4.62}
-  m_LocalScale: {x: 0.5, y: 2, z: 6}
+  m_LocalScale: {x: 0.5, y: 2, z: 6.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 958323123}
@@ -557,7 +557,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7c66d047fbd8ab44dadde80e27943eba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -810,8 +810,8 @@ GameObject:
   - component: {fileID: 707105898}
   - component: {fileID: 707105897}
   m_Layer: 0
-  m_Name: wall12
-  m_TagString: Untagged
+  m_Name: wall14
+  m_TagString: WallDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -864,7 +864,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7c66d047fbd8ab44dadde80e27943eba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1026,6 +1026,82 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &737701604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 737701605}
+  - component: {fileID: 737701607}
+  - component: {fileID: 737701606}
+  m_Layer: 5
+  m_Name: Lives_Display_img
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &737701605
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737701604}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 928797843}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 190}
+  m_SizeDelta: {x: 200, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &737701606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737701604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: aed4179ba674a5f4ebcf99693e3e5dd2, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &737701607
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737701604}
+  m_CullTransparentMesh: 1
 --- !u!1001 &747991890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1243,8 +1319,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1369,7 +1445,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tempo restante: \n00:00"
+  m_text: "Time remaining: \n00:00"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1542,6 +1618,7 @@ RectTransform:
   - {fileID: 2071537332}
   - {fileID: 871160539}
   - {fileID: 698186261}
+  - {fileID: 737701605}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1711,7 +1788,7 @@ GameObject:
   - component: {fileID: 958323123}
   m_Layer: 0
   m_Name: LabirynthWalls
-  m_TagString: Untagged
+  m_TagString: WallDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1834,8 +1911,8 @@ GameObject:
   - component: {fileID: 1102355858}
   - component: {fileID: 1102355857}
   m_Layer: 0
-  m_Name: wall8
-  m_TagString: Untagged
+  m_Name: wall10
+  m_TagString: WallDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1888,7 +1965,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7c66d047fbd8ab44dadde80e27943eba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2028,8 +2105,8 @@ GameObject:
   - component: {fileID: 1203027893}
   - component: {fileID: 1203027892}
   m_Layer: 0
-  m_Name: wall9
-  m_TagString: Untagged
+  m_Name: wall11
+  m_TagString: WallDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2082,7 +2159,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7c66d047fbd8ab44dadde80e27943eba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2126,7 +2203,7 @@ GameObject:
   - component: {fileID: 1223269972}
   m_Layer: 0
   m_Name: wall1
-  m_TagString: Untagged
+  m_TagString: WallDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2179,7 +2256,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7c66d047fbd8ab44dadde80e27943eba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2355,7 +2432,7 @@ GameObject:
   - component: {fileID: 1344198951}
   m_Layer: 0
   m_Name: wall5
-  m_TagString: Untagged
+  m_TagString: WallDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2408,7 +2485,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7c66d047fbd8ab44dadde80e27943eba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2601,8 +2678,8 @@ GameObject:
   - component: {fileID: 1555522070}
   - component: {fileID: 1555522069}
   m_Layer: 0
-  m_Name: wall13
-  m_TagString: Untagged
+  m_Name: wall15
+  m_TagString: WallDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2615,8 +2692,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1555522067}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.3, y: 0, z: 1.87}
-  m_LocalScale: {x: 7.15, y: 2, z: 0.5}
+  m_LocalPosition: {x: -6.23, y: 0, z: 1.87}
+  m_LocalScale: {x: 7.05, y: 2, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 958323123}
@@ -2655,7 +2732,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7c66d047fbd8ab44dadde80e27943eba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2699,7 +2776,7 @@ GameObject:
   - component: {fileID: 1724782260}
   m_Layer: 0
   m_Name: wall4
-  m_TagString: Untagged
+  m_TagString: WallDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2752,7 +2829,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7c66d047fbd8ab44dadde80e27943eba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2968,7 +3045,7 @@ GameObject:
   - component: {fileID: 1775370640}
   m_Layer: 0
   m_Name: wall3
-  m_TagString: Untagged
+  m_TagString: WallDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3021,7 +3098,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7c66d047fbd8ab44dadde80e27943eba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3064,8 +3141,8 @@ GameObject:
   - component: {fileID: 1782291386}
   - component: {fileID: 1782291385}
   m_Layer: 0
-  m_Name: wall6
-  m_TagString: Untagged
+  m_Name: wall8
+  m_TagString: WallDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3118,7 +3195,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7c66d047fbd8ab44dadde80e27943eba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3161,8 +3238,8 @@ GameObject:
   - component: {fileID: 1836719750}
   - component: {fileID: 1836719749}
   m_Layer: 0
-  m_Name: wall7
-  m_TagString: Untagged
+  m_Name: wall9
+  m_TagString: WallDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3215,7 +3292,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7c66d047fbd8ab44dadde80e27943eba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3258,8 +3335,8 @@ GameObject:
   - component: {fileID: 1840077848}
   - component: {fileID: 1840077847}
   m_Layer: 0
-  m_Name: wall5
-  m_TagString: Untagged
+  m_Name: wall6
+  m_TagString: WallDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3312,7 +3389,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7c66d047fbd8ab44dadde80e27943eba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3356,7 +3433,7 @@ GameObject:
   - component: {fileID: 1855497559}
   m_Layer: 0
   m_Name: wall2
-  m_TagString: Untagged
+  m_TagString: WallDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3409,7 +3486,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7c66d047fbd8ab44dadde80e27943eba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3452,8 +3529,8 @@ GameObject:
   - component: {fileID: 1877500230}
   - component: {fileID: 1877500229}
   m_Layer: 0
-  m_Name: wall11
-  m_TagString: Untagged
+  m_Name: wall13
+  m_TagString: WallDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3506,7 +3583,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7c66d047fbd8ab44dadde80e27943eba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3814,8 +3891,17 @@ MonoBehaviour:
   countText: {fileID: 817114684}
   winTextObject: {fileID: 2071537331}
   loseTextObject: {fileID: 698186260}
-  timeRemaining: 30
+  timeRemaining: 100
   timeText: {fileID: 871160540}
+  vida: 5
+  _livesSprites:
+  - {fileID: 21300000, guid: 969ba8b062ef172448bc6ef16359476e, type: 3}
+  - {fileID: 21300000, guid: 117f9cd9829cf874299ae6c5cb6a1a93, type: 3}
+  - {fileID: 21300000, guid: 31459847b785f724886286cc4c35da2f, type: 3}
+  - {fileID: 21300000, guid: d772c603634fbbb4585074bdacf5bc11, type: 3}
+  - {fileID: 21300000, guid: 4b83d7f11534b164f9cec0831682cbb3, type: 3}
+  - {fileID: 21300000, guid: aed4179ba674a5f4ebcf99693e3e5dd2, type: 3}
+  _livesImage: {fileID: 737701606}
 --- !u!1 &1973734664
 GameObject:
   m_ObjectHideFlags: 0
