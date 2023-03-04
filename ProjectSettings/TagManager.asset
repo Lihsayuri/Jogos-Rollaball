@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PickUp
   - WallDamage
+  - Win
   layers:
   - Default
   - TransparentFX

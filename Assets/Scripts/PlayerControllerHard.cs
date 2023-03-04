@@ -6,13 +6,11 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using TMPro;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControllerHard : MonoBehaviour
 {
     public float speed = 0;
     public TextMeshProUGUI countText;
     public TextMeshProUGUI ganhou_perdeu;
-    // public GameObject winTextObject;
-    // public GameObject loseTextObject;
 
     private Rigidbody rb; // isso vai criar uma vari�vel rigidbody para aplicar for�as (private, n�o acess�vel ao inspector)
     private float movementX;
@@ -71,12 +69,18 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PickUp") && !stop_timer)
         {
-            // Apenas desativa o Gameobject, mas n�o o destroi. S� que pra desativar tem que escolher qual, porque a bolinha � um rigidbody que vai ter intera��o e colisao com tudo : ground, walls, por isso a tag.
-            // by the way, precisa transformar em trigger e n�o continuar em normal colliders. Ainda colocar kinematic - standar rigid bodies movem por for�as fisica. 
-            // Os kinematic movem por transform.
             other.gameObject.SetActive(false);
             count = count + 1;
+            if (count >= 3 && vida < 5){
+                count -= 3;
+                vida =  vida + 1;
+                _livesImage.sprite = _livesSprites[vida];
+            }
             SetCountText();
+        } if (other.gameObject.CompareTag("Win") && !stop_timer)
+        {
+            stop_timer = true;
+            ganhou = true;
         }
     }
 
@@ -94,12 +98,6 @@ public class PlayerController : MonoBehaviour
     {
         countText.text = "Count: " + count.ToString();
 
-        if (count >= 12)
-        {
-            stop_timer = true;
-            // winTextObject.SetActive(true);
-            ganhou = true;
-        }
     }
 
     void SetGanhouPerdeuText(){
@@ -148,7 +146,7 @@ public class PlayerController : MonoBehaviour
 
     private void CheckEndGame()
     {
-        if (count >= 12 || timeRemaining <= 0 || vida <= 0)
+        if (perdeu || ganhou)
         {
             SetGanhouPerdeuText();
             // Esconde o contador de pontos
@@ -164,7 +162,7 @@ public class PlayerController : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
 
