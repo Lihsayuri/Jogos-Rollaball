@@ -20,7 +20,7 @@ public class PlayerControllerHard : MonoBehaviour
 
     private bool perdeu;
     private bool ganhou;
-    public float timeRemaining = 10;
+    public float timeRemaining = 120;
     public TextMeshProUGUI timeText; 
     public int vida = 5;
 

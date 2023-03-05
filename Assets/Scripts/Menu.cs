@@ -15,4 +15,9 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void LoadInstructions()
+    {
+        SceneManager.LoadScene(4);
+    }
+
 }

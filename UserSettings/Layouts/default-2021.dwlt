@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1280
     height: 646.6667
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Scene
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 93
+  controlID: 41
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 94
+  controlID: 42
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -318,22 +318,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 57
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scenes
   m_LastFoldersGridSize: 57
   m_LastProjectPath: C:\Users\sayur\OneDrive\Documentos\AULAS_SETIMO_SEMESTRE\Jogos\Rollaball
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 68.99997}
-    m_SelectedIDs: e26c0000
-    m_LastClickedID: 27874
-    m_ExpandedIDs: 00000000c86c0000ca6c0000cc6c0000ce6c0000d06c000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 486a0000
+    m_LastClickedID: 27208
+    m_ExpandedIDs: 00000000266a0000286a00002a6a00002c6a00002e6a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -361,7 +361,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c86c0000ca6c0000cc6c0000ce6c0000d06c0000
+    m_ExpandedIDs: 00000000266a0000286a00002a6a00002c6a00002e6a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -389,7 +389,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000606c000000000000806c0000
+    m_ExpandedInstanceIDs: c6230000606c000000000000806c00004a680000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -493,7 +493,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: ee67000022680000e4680000be720000ea720000fc7c0000167d0000527d00007e7d00002e7e0000487e0000907e0000867f0000f8830000848400008e850000a8850000
+      m_ExpandedIDs: 6499fdff8cfbfdffce4cfffff082ffff28fbffff2efbffffe2670000fc670000b46a0000e06a0000926b00001e6c0000906c0000026f0000f86f0000c4700000007c0000b4910000ce91000066920000929200009e920000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -776,9 +776,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 206.74193, y: 200.50633, z: -0.7045276}
+    m_Target: {x: 326.69962, y: 217.63608, z: -0.8940375}
     speed: 2
-    m_Value: {x: 206.74193, y: 200.50633, z: -0.7045276}
+    m_Value: {x: 326.69962, y: 217.63608, z: -0.8940375}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -829,9 +829,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 436.4055
+    m_Target: 248.62102
     speed: 2
-    m_Value: 436.4055
+    m_Value: 248.62102
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -849,8 +849,8 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.18657169, y: 0.6771025, z: -0.18367797, w: -0.68775576}
-  m_LastSceneViewOrtho: 1
+  m_LastSceneViewRotation: {x: 0.30153105, y: -0.008585741, z: 0.0027148388, w: 0.9534176}
+  m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
   m_SceneVisActive: 1
