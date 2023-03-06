@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI ganhou_perdeu;
     // public GameObject winTextObject;
     // public GameObject loseTextObject;
-
     private Rigidbody rb; // isso vai criar uma vari�vel rigidbody para aplicar for�as (private, n�o acess�vel ao inspector)
     private float movementX;
     private float movementY;
@@ -22,6 +21,7 @@ public class PlayerController : MonoBehaviour
 
     private bool perdeu;
     private bool ganhou;
+
     public float timeRemaining = 60;
     public TextMeshProUGUI timeText; 
     public int vida = 5;
@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision) 
     {
+
         if (collision.gameObject.tag == "WallDamage" && !stop_timer)
         {
             vida = vida - 1;
