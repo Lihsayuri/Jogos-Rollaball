@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private bool perdeu;
     private bool ganhou;
 
-    public float timeRemaining = 60;
+    public float timeRemaining = 80;
     public TextMeshProUGUI timeText; 
     public int vida = 5;
 
@@ -34,6 +34,16 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private GameObject endGamePanel;
+
+    public AudioSource audioSource;
+    public AudioSource gameMusic;
+    public AudioSource winSound;
+    public AudioSource loseSound;
+
+    private float lastHitTime;
+    public float invisibilityDuration = 1f;    
+
+    private bool acabou = false;
 
     // Start is called before the first frame update
     void Start()
@@ -50,15 +60,22 @@ public class PlayerController : MonoBehaviour
         // Set the text property of the Win Text UI to an empty string, making the 'You Win' (game over message) blank
         // winTextObject.SetActive(false);
         // loseTextObject.SetActive(false);
+        audioSource.Stop();
+        gameMusic.Play();
+        loseSound.Stop();
+        winSound.Stop();
         endGamePanel.SetActive(false);
 
     }
 
     void OnMove(InputValue movementValue)
     { 
-        Vector2 movementVector = movementValue.Get<Vector2>();
-        movementX = movementVector.x;
-        movementY = movementVector.y;
+        if (!stop_timer)
+        {
+            Vector2 movementVector = movementValue.Get<Vector2>();
+            movementX = movementVector.x;
+            movementY = movementVector.y;
+        }
     }
 
     void FixedUpdate() 
@@ -76,6 +93,7 @@ public class PlayerController : MonoBehaviour
             // Os kinematic movem por transform.
             other.gameObject.SetActive(false);
             count = count + 1;
+            audioSource.Play();
             SetCountText();
         }
     }
@@ -85,8 +103,11 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "WallDamage" && !stop_timer)
         {
-            vida = vida - 1;
-            _livesImage.sprite = _livesSprites[vida];
+            if (Time.time - lastHitTime > invisibilityDuration){
+                lastHitTime = Time.time;
+                vida = vida - 1;
+                _livesImage.sprite = _livesSprites[vida];
+            }
             // Debug.Log("Vida restante: " + vida);
         }
     }
@@ -131,6 +152,10 @@ public class PlayerController : MonoBehaviour
             stop_timer = true;
             // loseTextObject.SetActive(true);
             perdeu = true;
+        } 
+
+        if (acabou){
+            return;
         }
 
         CheckEndGame();
@@ -151,6 +176,14 @@ public class PlayerController : MonoBehaviour
     {
         if (count >= 12 || timeRemaining <= 0 || vida <= 0)
         {
+            acabou = true;
+            gameMusic.Stop();
+            if (ganhou){
+                winSound.Play();
+            }
+            else {
+                loseSound.Play();
+            }
             SetGanhouPerdeuText();
             // Esconde o contador de pontos
             countText.gameObject.SetActive(false);
@@ -158,6 +191,7 @@ public class PlayerController : MonoBehaviour
             timeText.gameObject.SetActive(false);
             // Esconde a vida
             _livesImage.gameObject.SetActive(false);
+
             endGamePanel.SetActive(true);
             // SceneManager.LoadScene(2);
         }
